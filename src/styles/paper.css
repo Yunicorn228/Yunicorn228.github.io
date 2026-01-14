@@ -1,0 +1,350 @@
+/* Academic Paper Typography - mimicking LaTeX/Computer Modern */
+
+/* Use STIX Two Text as our primary font (closest to Computer Modern available on web) */
+.page-content {
+  font-family: "STIX Two Text", "Times New Roman", "Liberation Serif", serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #000;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Title Page Styles */
+.title-page {
+  text-align: center;
+}
+
+.paper-title {
+  font-family: "STIX Two Text", "Times New Roman", serif;
+  font-size: 17pt;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.3;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Horizontal rule above title */
+.paper-title::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: #000;
+  margin-bottom: 20px;
+}
+
+/* Horizontal rule under title */
+.paper-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #000;
+  margin-top: 16px;
+}
+
+/* Author Block */
+.author-block {
+  margin: 20px 0 30px;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.author-name {
+  font-size: 12pt;
+  font-weight: 600;
+}
+
+.author-affiliation {
+  font-size: 10pt;
+  color: #333;
+}
+
+.author-email {
+  font-family: "Courier New", monospace;
+  font-size: 9pt;
+  color: #000;
+  text-decoration: none;
+}
+
+.author-email:hover {
+  text-decoration: underline;
+}
+
+/* Section Titles */
+.paper-section {
+  margin-top: 24px;
+  text-align: left;
+}
+
+.section-title {
+  font-family: "STIX Two Text", "Times New Roman", serif;
+  font-size: 15pt;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: none;
+}
+
+/* Add horizontal rule below section titles */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.5px;
+  background: #000;
+  margin-top: 4px;
+}
+
+/* Abstract */
+#abstract .section-title {
+  text-align: center;
+  font-size: 12pt;
+}
+
+#abstract .section-title::after {
+  display: none;
+}
+
+.abstract-content {
+  margin: 0 0.5in;
+  text-align: justify;
+  font-size: 10pt;
+}
+
+.abstract-content p {
+  text-indent: 0;
+  margin: 0;
+}
+
+/* Paper Links */
+.paper-links {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 10pt;
+  text-align: left;
+}
+
+.link-item {
+  display: block;
+}
+
+.link-item a {
+  color: #00529b;
+  text-decoration: none;
+}
+
+.link-item a:hover {
+  text-decoration: underline;
+}
+
+/* Education Section */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.education-item {
+  padding-bottom: 8px;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.edu-institution {
+  font-weight: 600;
+  font-size: 11pt;
+}
+
+.edu-location {
+  font-size: 10pt;
+  color: #333;
+}
+
+.edu-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.edu-degree {
+  color: #333;
+}
+
+.edu-dates {
+  color: #333;
+}
+
+.edu-advisor {
+  font-size: 10pt;
+  margin-top: 2px;
+  color: #333;
+}
+
+/* Publications Section - Subsection style */
+.publications-subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pub-subsection {
+  margin-bottom: 8px;
+}
+
+.subsection-title {
+  font-family: "STIX Two Text", "Times New Roman", serif;
+  font-size: 10pt;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.pub-pdf-link {
+  font-weight: 400;
+  font-size: 10pt;
+  color: #00529b;
+  text-decoration: none;
+  margin-left: 8px;
+}
+
+.pub-pdf-link:hover {
+  text-decoration: underline;
+}
+
+.pub-authors-line {
+  font-size: 10pt;
+  line-height: 1.5;
+  text-indent: 0;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.pub-description-text {
+  font-size: 10pt;
+  line-height: 1.5;
+  text-indent: 0;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+/* Experience Section - Subsection style */
+.experience-subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exp-subsection {
+  margin-bottom: 8px;
+}
+
+.exp-description-text {
+  font-size: 10pt;
+  line-height: 1.5;
+  text-indent: 0;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+/* References Section */
+.references-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reference-item {
+  display: flex;
+  gap: 8px;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.ref-number {
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.ref-content {
+  flex: 1;
+}
+
+/* General paragraph styling */
+p {
+  margin: 0 0 10px;
+  text-indent: 1.5em;
+}
+
+p:first-child {
+  text-indent: 0;
+}
+
+/* Introduction/narrative style content */
+.paper-intro .intro-content {
+  text-align: justify;
+}
+
+.paper-intro .intro-content p {
+  margin-bottom: 12px;
+  text-indent: 0;
+  line-height: 1.5;
+}
+
+/* Remove line under intro section titles */
+.paper-intro .section-title::after {
+  display: none;
+}
+
+/* Links in paper content */
+.page-content a {
+  color: #00529b;
+  text-decoration: none;
+}
+
+.page-content a:hover {
+  text-decoration: underline;
+}
+
+/* Emphasis and strong */
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* Lists */
+ul,
+ol {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+/* Small caps for section headers (LaTeX style) */
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+}

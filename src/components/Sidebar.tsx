@@ -11,6 +11,7 @@ interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
   currentPage: number;
+  activeSection?: string;
   onNavigate: (page: number, sectionId: string) => void;
 }
 
@@ -52,14 +53,9 @@ const tocData: TOCSection[] = [
       { id: 'exp-usmc', title: 'United States Marine Corps', page: 3 },
     ],
   },
-  {
-    id: 'skills',
-    title: 'Technical Skills',
-    page: 3,
-  },
 ];
 
-export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, currentPage, onNavigate }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeSection, onNavigate }) => {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['education', 'publications', 'experience']));
 
   const toggleSection = (sectionId: string) => {
@@ -82,19 +78,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, currentPage, 
       {isOpen && <div className="sidebar-backdrop" onClick={onClose} />}
       
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <div className="sidebar-header">
-          <button className="sidebar-close" onClick={onClose}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+        <div className="sidebar-profile">
+          <img src="/YU2023.jpeg" alt="Sheldon Yu" className="profile-image" />
         </div>
         
         <nav className="toc">
           {tocData.map((section) => (
             <div key={section.id} className="toc-section">
               <div 
-                className={`toc-item ${section.page === currentPage ? 'active' : ''}`}
+                className={`toc-item ${activeSection === section.id ? 'active' : ''}`}
                 onClick={() => handleNavigate(section.page, section.id)}
               >
                 {section.subsections && (
@@ -118,7 +110,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, currentPage, 
                   {section.subsections.map((sub) => (
                     <div 
                       key={sub.id}
-                      className={`toc-item toc-subitem ${sub.page === currentPage ? 'active' : ''}`}
+                      className={`toc-item toc-subitem ${activeSection === sub.id ? 'active' : ''}`}
                       onClick={() => handleNavigate(sub.page, sub.id)}
                     >
                       <span className="toc-bullet">•</span>

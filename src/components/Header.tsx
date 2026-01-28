@@ -38,6 +38,15 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="arxiv-header">
       <div className="header-left">
+        {/* Sidebar toggle */}
+        <button className="icon-btn sidebar-toggle" onClick={onToggleSidebar} title="Toggle sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
         {/* arXiv logo */}
         <div className="arxiv-logo">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,15 +58,6 @@ export const Header: React.FC<HeaderProps> = ({
           </svg>
         </div>
         
-        {/* Sidebar toggle */}
-        <button className="icon-btn sidebar-toggle" onClick={onToggleSidebar} title="Toggle sidebar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-
         {/* Document title */}
         <span className="document-title">Understanding Sheldon Yu: A Comprehensive Survey</span>
       </div>

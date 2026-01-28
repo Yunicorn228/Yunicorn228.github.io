@@ -10,6 +10,7 @@ function App() {
   const [zoom, setZoom] = useState(135);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sectionToScroll, setSectionToScroll] = useState<string | undefined>();
+  const [activeSection, setActiveSection] = useState<string | undefined>();
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= TOTAL_PAGES) {
@@ -28,6 +29,7 @@ function App() {
   const handleNavigate = (page: number, sectionId: string) => {
     setCurrentPage(page);
     setSectionToScroll(sectionId);
+    setActiveSection(sectionId);
   };
 
   const handleSectionScrolled = useCallback(() => {
@@ -51,6 +53,7 @@ function App() {
           isOpen={sidebarOpen}
           onClose={() => setSidebarOpen(false)}
           currentPage={currentPage}
+          activeSection={activeSection}
           onNavigate={handleNavigate}
         />
         

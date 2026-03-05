@@ -2,6 +2,23 @@ import React from 'react';
 import { cvData } from '../../data/cv-data';
 
 export const TitlePage: React.FC = () => {
+  const renderAbstractWithCitations = () => {
+    const parts = cvData.abstract.split(/(\[\d+\])/g);
+
+    return parts.map((part, index) => {
+      const href = cvData.abstractCitations[part as keyof typeof cvData.abstractCitations];
+      if (!href) {
+        return <React.Fragment key={`abstract-text-${index}`}>{part}</React.Fragment>;
+      }
+
+      return (
+        <a key={`abstract-citation-${index}`} href={href} target="_blank" rel="noopener noreferrer">
+          {part}
+        </a>
+      );
+    });
+  };
+
   return (
     <div className="title-page">
       {/* Paper Title */}
@@ -20,10 +37,9 @@ export const TitlePage: React.FC = () => {
       <section id="abstract" className="paper-section">
         <h2 className="section-title">Abstract</h2>
         <div className="abstract-content">
-          <p>{cvData.abstract}</p>
+          <p>{renderAbstractWithCitations()}</p>
         </div>
       </section>
     </div>
   );
 };
-

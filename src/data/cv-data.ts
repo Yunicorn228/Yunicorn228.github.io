@@ -32,13 +32,18 @@ export const cvData = {
   homepage: "https://yusheldon.netlify.app/",
   googleScholar: "https://scholar.google.com/citations?user=ULsTH1UAAAAJ&hl=en",
   
-  arxivId: "2601.13752v1",
+  arxivId: "3476.547566",
   arxivCategory: "cs.CL",
-  arxivDate: "14 Jan 2026",
+  arxivDate: "28 Feb 1997",
   
   paperTitle: "Understanding Sheldon Yu: A Comprehensive Survey",
   
-  abstract: `This document presents a comprehensive overview of Sheldon Yu, a Ph.D. student in Computer Science at the University of California, San Diego, advised by Prof. Julian McAuley. The research interests span large language models, efficient inference, and multimodal learning. Notable contributions include work on chain-of-thought reasoning dynamics, generative engine optimization, and speculative decoding for LLMs. Prior to doctoral studies, relevant experience was gained through research positions at Adobe Research, Caltech, and UC Irvine, as well as service in the United States Marine Corps. This work aims to document the academic trajectory and technical contributions of the author in the field of natural language processing and machine learning.`,
+  abstract: `This paper-inspired personal website offers a concise overview of Sheldon Yu, a second-year Ph.D. student in Computer Science at the University of California, San Diego, advised by Prof. Julian McAuley[1]. His research interests include recommender systems, reasoning in large language models, and agentic systems. Prior to beginning his doctoral studies, he worked as an undergraduate student researcher in the IASL Lab under the guidance of Prof. Marco Levorato[2]. Even earlier, before entering academia, he served in the United States Marine Corps[3] and attained the rank of Sergeant—perhaps he did not find enough suffering there, which ultimately led him to a Ph.D. program. He welcomes inquiries regarding research collaborations, as well as conversations about life, purpose, and the pursuit of meaningful problems.`,
+  abstractCitations: {
+    "[1]": "https://cseweb.ucsd.edu/~jmcauley/",
+    "[2]": "https://iasl.ics.uci.edu/people/",
+    "[3]": "https://www.marines.com/"
+  },
 
   education: [
     {
@@ -149,4 +154,3 @@ export const cvData = {
     frameworks: ["PyTorch"]
   }
 };
-

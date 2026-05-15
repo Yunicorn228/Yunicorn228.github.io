@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import { PDFPage } from './PDFPage';
 import { TitlePage } from './content/TitlePage';
-import { EducationSection } from './content/EducationSection';
 import { PublicationsSection } from './content/PublicationsSection';
+import { EducationSection } from './content/EducationSection';
 import { ExperienceSection } from './content/ExperienceSection';
 import { ReferencesSection } from './content/ReferencesSection';
 import { cvData } from '../data/cv-data';
@@ -82,7 +82,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
   return (
     <div className="pdf-viewer" ref={viewerRef}>
       <div className="pdf-pages-container" style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'top center' }}>
-        {/* Page 1: Title, Abstract, and Education */}
+        {/* Page 1: Title, Abstract, and first part of Publications */}
         <div ref={el => pageRefs.current[0] = el}>
           <PDFPage
             pageNumber={1}
@@ -91,11 +91,11 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
             arxivDate={cvData.arxivDate}
           >
             <TitlePage />
-            <EducationSection />
+            <PublicationsSection startIndex={0} endIndex={2} />
           </PDFPage>
         </div>
 
-        {/* Page 2: Publications */}
+        {/* Page 2: Remaining Publications and Education */}
         <div ref={el => pageRefs.current[1] = el}>
           <PDFPage
             pageNumber={2}
@@ -103,7 +103,13 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
             arxivCategory={cvData.arxivCategory}
             arxivDate={cvData.arxivDate}
           >
-            <PublicationsSection />
+            <PublicationsSection
+              startIndex={2}
+              endIndex={4}
+              sectionId="publications-continued"
+              title=""
+            />
+            <EducationSection />
           </PDFPage>
         </div>
 
@@ -123,4 +129,3 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
     </div>
   );
 };
-

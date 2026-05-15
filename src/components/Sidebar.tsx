@@ -22,23 +22,23 @@ const tocData: TOCSection[] = [
     page: 1,
   },
   {
+    id: 'publications',
+    title: 'Publications',
+    page: 1,
+    subsections: [
+      { id: 'pub-1', title: 'ECO-GEO: Experimentation-Augmented...', page: 1 },
+      { id: 'pub-2', title: 'Explainable Chain-of-Thought Reasoning...', page: 1 },
+      { id: 'pub-3', title: 'Towards Agentic Recommender Systems...', page: 2 },
+      { id: 'pub-4', title: 'Improving Multi-Candidate Speculative...', page: 2 },
+    ],
+  },
+  {
     id: 'education',
     title: 'Education',
     page: 2,
     subsections: [
       { id: 'edu-phd', title: 'Ph.D. in Computer Science', page: 2 },
       { id: 'edu-bs', title: 'B.S. in Computer Science', page: 2 },
-    ],
-  },
-  {
-    id: 'publications',
-    title: 'Publications',
-    page: 2,
-    subsections: [
-      { id: 'pub-1', title: 'ECO-GEO: Experimentation-Augmented...', page: 2 },
-      { id: 'pub-2', title: 'Explainable Chain-of-Thought Reasoning...', page: 2 },
-      { id: 'pub-3', title: 'Towards Agentic Recommender Systems...', page: 2 },
-      { id: 'pub-4', title: 'Improving Multi-Candidate Speculative...', page: 2 },
     ],
   },
   {
@@ -126,4 +126,3 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeSection
     </>
   );
 };
-

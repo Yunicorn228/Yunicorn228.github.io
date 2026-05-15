@@ -39,10 +39,10 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
   // Update current page based on scroll position
   const handleScroll = useCallback(() => {
     if (!viewerRef.current) return;
-    
+
     const viewerRect = viewerRef.current.getBoundingClientRect();
     const viewerCenter = viewerRect.top + viewerRect.height / 3;
-    
+
     for (let i = 0; i < pageRefs.current.length; i++) {
       const pageEl = pageRefs.current[i];
       if (pageEl) {
@@ -82,7 +82,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
   return (
     <div className="pdf-viewer" ref={viewerRef}>
       <div className="pdf-pages-container" style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'top center' }}>
-        {/* Page 1: Title, Abstract, and first part of Publications */}
+        {/* Page 1: Title, Abstract, Education */}
         <div ref={el => pageRefs.current[0] = el}>
           <PDFPage
             pageNumber={1}
@@ -91,11 +91,11 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
             arxivDate={cvData.arxivDate}
           >
             <TitlePage />
-            <PublicationsSection startIndex={0} endIndex={2} />
+            <EducationSection />
           </PDFPage>
         </div>
 
-        {/* Page 2: Remaining Publications and Education */}
+        {/* Page 2: Publications 1-4 */}
         <div ref={el => pageRefs.current[1] = el}>
           <PDFPage
             pageNumber={2}
@@ -103,20 +103,31 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
             arxivCategory={cvData.arxivCategory}
             arxivDate={cvData.arxivDate}
           >
-            <PublicationsSection
-              startIndex={2}
-              endIndex={4}
-              sectionId="publications-continued"
-              title=""
-            />
-            <EducationSection />
+            <PublicationsSection startIndex={0} endIndex={4} />
           </PDFPage>
         </div>
 
-        {/* Page 3: Experience and References */}
+        {/* Page 3: Publications 5-9 */}
         <div ref={el => pageRefs.current[2] = el}>
           <PDFPage
             pageNumber={3}
+            arxivId={cvData.arxivId}
+            arxivCategory={cvData.arxivCategory}
+            arxivDate={cvData.arxivDate}
+          >
+            <PublicationsSection
+              startIndex={4}
+              endIndex={9}
+              sectionId="publications-continued"
+              title=""
+            />
+          </PDFPage>
+        </div>
+
+        {/* Page 4: Experience and References */}
+        <div ref={el => pageRefs.current[3] = el}>
+          <PDFPage
+            pageNumber={4}
             arxivId={cvData.arxivId}
             arxivCategory={cvData.arxivCategory}
             arxivDate={cvData.arxivDate}

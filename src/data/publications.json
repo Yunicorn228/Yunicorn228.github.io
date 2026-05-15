@@ -1,0 +1,90 @@
+[
+  {
+    "id": "pub-5",
+    "title": "WS-GRPO: Weakly-Supervised Group-Relative Policy Optimization for Rollout-Efficient Reasoning",
+    "authors": "Gagan Mundada and Zihan Huang and Rohan Surana and Sheldon Yu and Jennifer Yuntong Zhang and Xintong Li and Tong Yu and Lina Yao and Jingbo Shang and Julian McAuley and Junda Wu",
+    "venue": "arXiv preprint arXiv:2602.17025",
+    "year": "2026",
+    "abstract": "Group Relative Policy Optimization (GRPO) is effective for training language models on complex reasoning. However, since the objective is defined relative to a group of sampled trajectories, extended deliberation can create more chances to realize relative gains, leading to inefficient reasoning and overthinking, and complicating the trade-off between correctness and rollout efficiency. Controlling this behavior is difficult in practice, considering (i) Length penalties are hard to calibrate because longer rollouts may reflect harder problems that require longer reasoning, penalizing tokens risks truncating useful reasoning along with redundant continuation; and (ii) supervision that directly indicates when to continue or stop is typically unavailable beyond final answer correctness. We propose Weakly Supervised GRPO (WS-GRPO), which improves rollout efficiency by converting terminal rewards into correctness-aware guidance over partial trajectories. Unlike global length penalties that are hard to calibrate, WS-GRPO trains a preference model from outcome-only correctness to produce prefix-level signals that indicate when additional continuation is beneficial. Thus, WS-GRPO supplies outcome-derived continue/stop guidance, reducing redundant deliberation while maintaining accuracy. We provide theoretical results and empirically show on reasoning benchmarks that WS-GRPO substantially reduces rollout length while remaining competitive with GRPO baselines.",
+    "pdfUrl": "https://arxiv.org/abs/2602.17025",
+    "numCitations": 2,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:2osOgNQ5qMEC"
+  },
+  {
+    "id": "pub-6",
+    "title": "MASS-DPO: Multi-negative Active Sample Selection for Direct Policy Optimization",
+    "authors": "Rohan Surana and Xintong Li and Sheldon Yu and Yiran Jenny Shen and Chuhan Wang and Tong Yu and Prithviraj Ammanabrolu and Jingbo Shang and Julian McAuley and Junda Wu",
+    "venue": "arXiv preprint arXiv:2605.10784",
+    "year": "2026",
+    "abstract": "Multi-negative preference optimization under the Plackett--Luce (PL) model extends Direct Preference Optimization (DPO) by leveraging comparative signals across one preferred and multiple rejected responses. However, optimizing over large negative pools is costly, and many candidates contribute redundant gradients due to their similar effects on policy updates. We introduce MASS-DPO, a multi-negative active sample selection method that derives a PL-specific Fisher-information objective for selecting compact, informative negative subsets within each prompt. The resulting log-determinant objective selects negatives that contribute complementary information for policy updates, yielding compact subsets that retain the full pool's information while reducing redundancy. In practice, this favors negatives whose gradients cover different update directions, reducing redundant signal from near-duplicate candidates while preserving the most useful training information. Across four benchmarks spanning recommendation and multiple-choice QA and three model families, MASS-DPO consistently exceeds or matches existing methods in accuracy, improves Recall/NDCG and margin-based optimization dynamics, and delivers stronger alignment with substantially fewer negatives.",
+    "pdfUrl": "https://arxiv.org/abs/2605.10784",
+    "numCitations": 1,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:qjMakFHDy7sC"
+  },
+  {
+    "id": "pub-7",
+    "title": "Generate, Filter, Control, Replay: A Comprehensive Survey of Rollout Strategies for LLM Reinforcement Learning",
+    "authors": "Rohan Surana and Gagan Mundada and Xunyi Jiang and Chuhan Wang and Zhenwei Tang and Difan Jiao and Zihan Huang and Yuxin Xiong and Junda Wu and Sheldon Yu and Xintong Li and Raghav Jain and Nikki Kuang and Sizhe Zhou and Bowen Jin and Zhendong Chu and Tong Yu and Ryan Rossi and Kuan-Hao Huang and Jingbo Shang and Jiawei Han and Julian McAuley",
+    "venue": "",
+    "year": "2026",
+    "abstract": "Reinforcement learning (RL) has become a central post-training tool for improving the reasoning abilities of large language models (LLMs). In these systems, the rollout, the trajectory sampled from a prompt to termination, including intermediate reasoning steps and optional tool or environment interactions, determines the data the optimizer learns from, yet rollout design is often underreported. This survey provides an optimizer-agnostic view of rollout strategies for RL-based post-training of reasoning LLMs. We formalize rollout pipelines with unified notation and introduce Generate-Filter-Control-Replay (GFCR), a lifecycle taxonomy that decomposes rollout pipelines into four modular stages: Generate proposes candidate trajectories and topologies; Filter constructs intermediate signals via verifiers, judges, critics; Control allocates compute and makes continuation/branching/stopping decisions under budgets; and Replay retains and reuses artifacts across rollouts without weight updates, including self-evolving curricula that autonomously generate new training tasks. We complement GFCR with a criterion taxonomy of reliability, coverage, and cost sensitivity that characterizes rollout trade-offs. Using this framework, we synthesize methods spanning RL with verifiable rewards, process supervision, judge-based gating, guided and tree/segment rollouts, adaptive compute allocation, early-exit and partial rollouts, throughput optimization, and replay/recomposition for self-improvement. We ground the framework with case studies in math, code/SQL, multimodal reasoning, tool-using agents, and agentic skill benchmarks that evaluate skill induction …",
+    "pdfUrl": "https://arxiv.org/abs/2605.02913",
+    "numCitations": 1,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:IjCSPb-OGe4C"
+  },
+  {
+    "id": "pub-8",
+    "title": "A Low-Latency Fraud Detection Layer for Detecting Adversarial Interaction Patterns in LLM-Powered Agents",
+    "authors": "Sheldon Yu and Yingcheng Sun and Hanqing Guo and Julian McAuley and Qianqian Tong",
+    "venue": "arXiv preprint arXiv:2605.01143",
+    "year": "2026",
+    "abstract": "Large Language Model (LLM)-powered agents demonstrate strong capabilities in autonomous task execution, tool use, and multi-step reasoning. However, their increasing autonomy also introduces a new attack surface: adversarial interactions can manipulate agent behavior through direct prompt injection, indirect content attacks, and multi-turn escalation strategies. Existing defense strategies focus on prompt-level filtering and rule-based guardrails, which are often insufficient when risk emerges gradually across interaction sequences. In this work, we propose a complementary defense mechanism: a low-latency fraud detection layer for detecting adversarial interaction patterns in LLM-powered agents. Instead of determining whether a single prompt is malicious, our approach models risk over interaction trajectories using structured runtime features derived from prompt characteristics, session dynamics, tool usage, execution context, and fraud-inspired signals. The detection layer can be implemented using lightweight models leading to low-latency real-time deployments. To evaluate the framework, we construct a synthetic corpus of 12,000 multi-turn agent interactions generated from parameterized templates that simulate realistic agentic workflows. Using 42 structured features and an XGBoost classifier, our detector achieves over 9 times faster than LLM-based detectors. Through the experiment and ablation studies, our work suggests that interaction-level behavioral detection should become a core component of deployment-time defense for LLM-powered agents.",
+    "pdfUrl": "https://arxiv.org/abs/2605.01143",
+    "numCitations": 0,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:UeHWp8X0CEIC"
+  },
+  {
+    "id": "pub-1",
+    "title": "Towards agentic recommender systems in the era of multimodal large language models",
+    "authors": "Chengkai Huang and Junda Wu and Yu Xia and Zixu Yu and Ruhan Wang and Tong Yu and Ruiyi Zhang and Ryan A Rossi and Branislav Kveton and Dongruo Zhou and Julian McAuley and Lina Yao",
+    "venue": "arXiv preprint arXiv:2503.16734",
+    "year": "2025",
+    "abstract": "Recent breakthroughs in Large Language Models (LLMs) have led to the emergence of agentic AI systems that extend beyond the capabilities of standalone models. By empowering LLMs to perceive external environments, integrate multimodal information, and interact with various tools, these agentic systems exhibit greater autonomy and adaptability across complex tasks. This evolution brings new opportunities to recommender systems (RS): LLM-based Agentic RS (LLM-ARS) can offer more interactive, context-aware, and proactive recommendations, potentially reshaping the user experience and broadening the application scope of RS. Despite promising early results, fundamental challenges remain, including how to effectively incorporate external knowledge, balance autonomy with controllability, and evaluate performance in dynamic, multimodal settings. In this perspective paper, we first present a systematic analysis of LLM-ARS: (1) clarifying core concepts and architectures; (2) highlighting how agentic capabilities -- such as planning, memory, and multimodal reasoning -- can enhance recommendation quality; and (3) outlining key research questions in areas such as safety, efficiency, and lifelong personalization. We also discuss open problems and future directions, arguing that LLM-ARS will drive the next wave of RS innovation. Ultimately, we foresee a paradigm shift toward intelligent, autonomous, and collaborative recommendation experiences that more closely align with users' evolving needs and complex decision-making processes.",
+    "pdfUrl": "https://arxiv.org/abs/2503.16734",
+    "numCitations": 44,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:u-x6o8ySG0sC"
+  },
+  {
+    "id": "pub-3",
+    "title": "Ctrls: Chain-of-thought reasoning via latent state-transition",
+    "authors": "Junda Wu and Yuxin Xiong and Xintong Li and Sheldon Yu and Zhengmian Hu and Tong Yu and Rui Wang and Xiang Chen and Jingbo Shang and Julian McAuley",
+    "venue": "arXiv preprint arXiv:2507.08182",
+    "year": "2025",
+    "abstract": "Chain-of-thought (CoT) reasoning enables large language models (LLMs) to break down complex problems into interpretable intermediate steps, significantly enhancing model transparency and performance in reasoning tasks. However, conventional CoT methods rely on heuristic sampling without structured modeling of reasoning transitions, constraining their ability to systematically explore and discover diverse and effective reasoning trajectories. In this work, we introduce CTRLS, a framework that formulates CoT reasoning as a Markov decision process (MDP) with latent state transitions, enabling principled and state-aware exploration via distributional reinforcement learning. By modelling reasoning actions as explicit probability distributions in latent space, our approach explicitly models epistemic uncertainty, facilitating robust exploration of the reasoning space. As part of our framework, we introduce an on-policy reinforcement learning strategy incorporating epsilon-greedy exploration and entropy-based regularization to iteratively refine latent state transitions without requiring additional fine-tuning of the underlying LLM. Theoretical analyses provide evidence lower bounds (ELBO), theoretically grounding our transition-aware modeling of latent reasoning dynamics. Further experiments demonstrate improvements in reasoning accuracy, diversity, and exploration efficiency across benchmark reasoning tasks.",
+    "pdfUrl": "https://arxiv.org/abs/2507.08182",
+    "numCitations": 8,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:9yKSN-GCB0IC"
+  },
+  {
+    "id": "pub-4",
+    "title": "Explainable Chain-of-Thought Reasoning: An Empirical Analysis on State-Aware Reasoning Dynamics",
+    "authors": "Sheldon Yu and Yuxin Xiong and Junda Wu and Xintong Li and Tong Yu and Xiang Chen and Ritwik Sinha and Jingbo Shang and Julian McAuley",
+    "venue": "arXiv preprint arXiv:2509.00190",
+    "year": "2025",
+    "abstract": "Recent advances in chain-of-thought (CoT) prompting have enabled large language models (LLMs) to perform multi-step reasoning. However, the explainability of such reasoning remains limited, with prior work primarily focusing on local token-level attribution, such that the high-level semantic roles of reasoning steps and their transitions remain underexplored. In this paper, we introduce a state-aware transition framework that abstracts CoT trajectories into structured latent dynamics. Specifically, to capture the evolving semantics of CoT reasoning, each reasoning step is represented via spectral analysis of token-level embeddings and clustered into semantically coherent latent states. To characterize the global structure of reasoning, we model their progression as a Markov chain, yielding a structured and interpretable view of the reasoning process. This abstraction supports a range of analyses, including semantic role identification, temporal pattern visualization, and consistency evaluation.",
+    "pdfUrl": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.904.pdf",
+    "numCitations": 5,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:d1gkVwhDpl0C"
+  },
+  {
+    "id": "pub-2",
+    "title": "Improving multi-candidate speculative decoding",
+    "authors": "Xiaofan Lu and Yixiao Zeng and Feiyang Ma and Zixu Yu and Marco Levorato",
+    "venue": "arXiv preprint arXiv:2409.10644",
+    "year": "2024",
+    "abstract": "Speculative Decoding (SD) is a technique to accelerate the inference of Large Language Models (LLMs) by using a lower complexity draft model to propose candidate tokens verified by a larger target model. To further improve efficiency, Multi-Candidate Speculative Decoding (MCSD) improves upon this by sampling multiple candidate tokens from the draft model at each step and verifying them in parallel, thus increasing the chances of accepting a token and reducing generation time. Existing MCSD methods rely on the draft model to initialize the multi-candidate sequences and use static length and tree attention structure for draft generation. However, such an approach suffers from the draft and target model's output distribution differences, especially in a dynamic generation context. In this work, we introduce a new version of MCSD that includes a target model initialized multi-candidate generation, a dynamic sliced topology-aware causal mask for dynamic length adjustment, and decision models to optimize early stopping. We experimented with our method on Llama 2-7B and its variants and observed a maximum 27.5% speedup compared to our MCSD baseline across three benchmarks with Llama 2-7B as the target model and JackFram 68M as the draft model. Additionally, we evaluate the effects of using the target model initialized multi-candidate process with different draft models on output quality.",
+    "pdfUrl": "https://arxiv.org/abs/2409.10644",
+    "numCitations": 10,
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ULsTH1UAAAAJ&citation_for_view=ULsTH1UAAAAJ:u5HHmVD_uO8C"
+  }
+]

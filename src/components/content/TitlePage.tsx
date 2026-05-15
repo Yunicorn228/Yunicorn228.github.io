@@ -33,6 +33,36 @@ export const TitlePage: React.FC = () => {
         </div>
       </div>
 
+      {/* Profile Links */}
+      <div className="author-links">
+        <a
+          href={cvData.googleScholar}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="author-link"
+        >
+          Google Scholar
+        </a>
+        <span className="author-link-separator">·</span>
+        <a
+          href={cvData.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="author-link"
+        >
+          LinkedIn
+        </a>
+        <span className="author-link-separator">·</span>
+        <a
+          href={cvData.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="author-link"
+        >
+          GitHub
+        </a>
+      </div>
+
       {/* Abstract */}
       <section id="abstract" className="paper-section">
         <h2 className="section-title">Abstract</h2>

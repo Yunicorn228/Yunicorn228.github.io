@@ -78,6 +78,29 @@
   text-decoration: underline;
 }
 
+.author-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: -18px 0 28px;
+  font-size: 10pt;
+}
+
+.author-link {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #999;
+}
+
+.author-link:hover {
+  border-bottom-color: #000;
+}
+
+.author-link-separator {
+  color: #777;
+}
+
 /* Section Titles */
 .paper-section {
   margin-top: 24px;

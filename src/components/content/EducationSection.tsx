@@ -3,7 +3,7 @@ import React from 'react';
 export const EducationSection: React.FC = () => {
   return (
     <section id="education" className="paper-section paper-intro">
-      <h2 className="section-title">2 Education</h2>
+      <h2 className="section-title">1 Education</h2>
       
       <div className="intro-content">
         <p id="edu-phd">

@@ -31,6 +31,8 @@ export const cvData = {
   phone: "(347)654-7566",
   homepage: "https://yusheldon.netlify.app/",
   googleScholar: "https://scholar.google.com/citations?user=ULsTH1UAAAAJ&hl=en",
+  linkedin: "https://www.linkedin.com/in/sheldon-yu-89b019118/",
+  github: "https://github.com/Yunicorn228",
   
   arxivId: "3476.547566",
   arxivCategory: "cs.CL",

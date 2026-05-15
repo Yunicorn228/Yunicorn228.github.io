@@ -3,7 +3,7 @@ import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { PDFViewer } from './components/PDFViewer';
 
-const TOTAL_PAGES = 3;
+const TOTAL_PAGES = 4;
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
